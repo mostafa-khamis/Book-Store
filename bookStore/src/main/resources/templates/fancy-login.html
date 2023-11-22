@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!--    <link rel="stylesheet" th:href="@{/css/style.css}"/>-->
+    <style>
+        body {
+            background-image: url("/imgs/Books.jfif");
+            background-size: cover;
+        }
+        
+        .container {
+            width: 100%;
+        }
+        
+        .form {
+            width: 35%;
+            margin: 180px auto 0;
+            text-align: center;
+        }
+        
+        form {
+            background-color: #212429;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        p {
+            color: white;
+            font-size: 20px;
+        }
+        
+        input {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            border-radius: 5px;
+            height: 45px;
+            border: none;
+            font-size: 18px;
+            text-align: center;
+            background: #FAF9F6;
+            color: #212429;
+        }
+        
+        input[type=submit] {
+            width: 30%;
+            margin: 20px auto 0;
+            color: #212429;
+            cursor: pointer;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="#" th:action="@{authenticationTheUser}" method="post">
+                <div th:if="${param.error}">
+
+                    <div style="color: red; ">
+                        Invalid username and password.
+                    </div>
+
+                </div>
+                <div th:if="${param.logout}">
+
+                    <div style="color: green;">
+                        You logged out successfully.
+                    </div>
+
+                </div>
+                <p for="">Username</p>
+                <input type="text" name="username">
+
+                <p for="">Password</p>
+                <input type="password" name="password">
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
