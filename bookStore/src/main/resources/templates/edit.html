@@ -22,16 +22,24 @@
                     <a class="nav-link text-white" href="/available_book">Available Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="my_books">My Books</a>
+                    <a class="nav-link text-white" href="/my_books">My Books</a>
                 </li>
+
             </ul>
-            <div>
+            <div style="display:flex;">
+
                 <a class="nav-link text-white" href="book_register">Register New Book</a>
+                <form action="#"  th:action="@{/logout}" method="post" >
+                    <input style=" background-color: #212429; border:none ;color:white ;margin-top:6px" type="submit" value="Log out">
+                </form>
+
             </div>
+
+
+
         </div>
     </div>
 </nav>
-
 
 <div class="container my-5 p-5" style="border : 1px solid black">
     <h3 class="text-center">Edit Book</h3>
